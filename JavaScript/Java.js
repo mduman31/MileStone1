@@ -1,38 +1,29 @@
+// Wait for DOM to load fully before injecting data
 document.addEventListener("DOMContentLoaded", () => {
-    // Correct active live forecast URL for New Castle, DE grid point
-    const weatherUrl = "https://weather.gov";
-    const weatherCard = document.getElementById("weather-card");
+    
+    // Selecting elements based on updated semantic markup IDs
+    const cityElement = document.getElementById("city-name");
+    const tempElement = document.getElementById("temp-display");
+    const descElement = document.getElementById("condition-desc");
+    const humidityElement = document.getElementById("humidity-display");
 
-    fetch(weatherUrl, {
-        headers: {
-            'User-Agent': 'MaryAnnPortfolioApp (contact@example.com)'
-        }
-    })
-    .then(response => {
-        if (!response.ok) {
-            throw new Error("Network error fetching weather data");
-        }
-        return response.json();
-    })
-    .then(data => {
-        // Grab the most current upcoming hour from the live NWS forecast periods
-        const currentPeriod = data.properties.periods[0];
-        
-        const temperature = currentPeriod.temperature;
-        const unit = currentPeriod.temperatureUnit;
-        const shortForecast = currentPeriod.shortForecast;
-        const windSpeed = currentPeriod.windSpeed;
-        const windDirection = currentPeriod.windDirection;
+    // Simulating API telemetry callback
+    function loadGalacticWeather() {
+        // Mock data matching the Kauai setting from the show!
+        const weatherData = {
+            city: "Kokaua Town, Kauai",
+            temp: 27,
+            description: "Warm Tropical Breeze",
+            humidity: 78
+        };
 
-        // Update the display card with live Delaware data
-        weatherCard.innerHTML = `
-            <div class="weather-temp">${temperature}°${unit}</div>
-            <div class="weather-desc">${shortForecast}</div>
-            <div class="weather-details">Wind: ${windSpeed} ${windDirection}</div>
-        `;
-    })
-    .catch(error => {
-        console.error("Error updating weather:", error);
-        weatherCard.innerHTML = `<p style="color:#d13b68; font-weight:bold;">Failed to load live weather. Please refresh.</p>`;
-    });
+        // Injecting text properties safely to prevent breaking layout frames
+        cityElement.textContent = weatherData.city;
+        tempElement.textContent = `${weatherData.temp}°C`;
+        descElement.textContent = weatherData.description;
+        humidityElement.textContent = `Humidity: ${weatherData.humidity}%`;
+    }
+
+    // Trigger simulation after a short 1-second system startup delay
+    setTimeout(loadGalacticWeather, 1000);
 });

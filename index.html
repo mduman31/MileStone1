@@ -3,39 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome To My Portfolio</title>
-    <!-- Links to styling.css in your root directory -->
-    <link rel="stylesheet" href="styling.css">
+    <title>Ohana Dashboard</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- Header Section (Stitch & Angel Theme) -->
+    <!-- Header Section -->
     <header class="stitch-header">
-        <h1>Welcome To My Portfolio</h1>
-        <p class="subtitle">By MaryAnn Duman</p>
+        <h1>Experiment 626 & 624 Portal</h1>
+        <p class="subtitle">Aloha! Welcome to My Galactic Workspace</p>
     </header>
 
-    <!-- Main Content Container -->
+    <!-- Main Content Grid -->
     <main class="container">
         
-        <!-- About Section -->
+        <!-- Left Side: Portfolio Content Box -->
         <section class="portfolio-card">
-            <h2>Aloha! About Me 🌺</h2>
-            <p>Welcome to my space. "Ohana means family, and family means nobody gets left behind or forgotten." Here you will find my latest creations, projects, and designs inspired by things I love.</p>
+            <h2>Project Portfolio</h2>
+            <p>Welcome to my development hub. This interface is fully optimized for monitoring active cloud experiments, local planet conditions, and sub-orbital code deployments.</p>
+            <p>Ohana means family, and family means nobody gets left behind or forgotten. Check out my system diagnostics tool on the right to stay updated with live atmospheric shifts.</p>
         </section>
 
-        <!-- Weather Widget Section -->
+        <!-- Right Side: Live Weather Box -->
         <aside class="weather-card">
-            <h2>Live Weather ⚡</h2>
-            <p class="location">New Castle, DE 19720</p>
-            <div id="weather-card" class="weather-display">
-                <p>Loading local weather...</p>
+            <h2>Galactic Weather</h2>
+            <div class="weather-display">
+                <p class="location" id="city-name">Loading Sector...</p>
+                <div class="weather-temp" id="temp-display">--°C</div>
+                <div class="weather-desc" id="condition-desc">Connecting to satellite...</div>
+                <div class="weather-details" id="humidity-display">Humidity: --%</div>
             </div>
         </aside>
 
     </main>
 
-    <!-- Targets your script file inside your repository JavaScript folder -->
-    <script src="JavaScript/java.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
