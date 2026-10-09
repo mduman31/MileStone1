@@ -3,9 +3,9 @@
 Welcome to my personal web portfolio website! This project features a clean, responsive layout built with a custom **Lilo & Stitch (Stitch Blue & Angel Pink)** aesthetic, complete with a real-time weather widget tracking local weather data.
 
 ## 🌐 Live Websites & Project Links
-*   **Live Portfolio Site:** [Launch MaryAnn's Portfolio Layout](https://github.io)
+*   **Live Portfolio Site:** [Launch MaryAnn's Portfolio Layout](https://github.com/mduman31)
 *   **My First Website:** [View MaryAnn's Personal Webpage](https://mduman31.github.io/myfirstwebsite/)
-*   **GitHub Repository:** [mduman31/MileStone1](https://github.com)
+*   **GitHub Repository:** [mduman31/MileStone1](https://mduman31.github.io/MileStone1/)
 
 ---
 
