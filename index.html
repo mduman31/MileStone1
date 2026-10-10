@@ -3,39 +3,206 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome To My Portfolio</title>
-    <!-- Links to styling.css in your root directory -->
-    <link rel="stylesheet" href="styling.css">
+    <title>MaryAnn's Galactic Hub</title>
+    <style>
+        /* Core Layout with Stitch Deep Space Blue & Angel Pink Aesthetic */
+        body {
+            background-color: #071e43 !important; /* Stitch Deep Space Blue Background */
+            color: #a3c6d9 !important;            /* Blue Mist color for excellent body text readability */
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1000px;
+            width: 100%;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        /* Angel Soft Lavender Pink Shimmer for main headers */
+        h1, h2, h3 {
+            background: linear-gradient(135deg, #e2bbf0 0%, #f3d6fa 50%, #c499d3 100%) !important;
+            -webkit-background-clip: text !important;
+            -webkit-text-fill-color: transparent !important;
+            filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.6));
+            margin-bottom: 15px;
+            font-weight: 800;
+        }
+
+        h1 {
+            font-size: 3.2rem;
+            text-shadow: 0 0 12px rgba(226, 187, 240, 0.4);
+            margin-bottom: 5px;
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        /* Blue Mist & Angel Pink Shimmer for Intro Text */
+        .intro-text {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin: 5px 0;
+            background: linear-gradient(90deg, #a3c6d9, #e2bbf0, #a3c6d9);
+            -webkit-background-clip: text !important;
+            -webkit-text-fill-color: transparent !important;
+        }
+
+        /* Custom Neon Island Wave Decoration under main header */
+        .island-wave {
+            width: 120px;
+            height: 6px;
+            background: linear-gradient(90deg, transparent, #e2bbf0, #a3c6d9, #e2bbf0, transparent);
+            margin: 15px auto 25px auto;
+            border-radius: 50%;
+            box-shadow: 0 0 10px rgba(226, 187, 240, 0.6);
+        }
+
+        /* Responsive Glass Cards Layout with Angel Pink Framed Borders */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            padding: 10px;
+            margin-top: 20px;
+        }
+
+        .card {
+            background: rgba(13, 32, 64, 0.75); /* Translucent Stitch Blue glass tint */
+            backdrop-filter: blur(12px); 
+            -webkit-backdrop-filter: blur(12px);
+            border: 2px solid rgba(226, 187, 240, 0.4); /* Angel Pink thin borders */
+            border-radius: 16px;
+            padding: 25px;
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(226, 187, 240, 0.9); /* Border glows Angel Pink on mouse hover */
+            box-shadow: 0 12px 40px 0 rgba(226, 187, 240, 0.2);
+        }
+
+        .card h3 {
+            margin-top: 0;
+            font-size: 1.5rem;
+            border-bottom: 1px solid rgba(226, 187, 240, 0.3);
+            padding-bottom: 10px;
+        }
+
+        p, li {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            opacity: 0.95;
+        }
+
+        strong {
+            color: #e2bbf0; /* Highlights pop out in Angel Pink */
+        }
+
+        /* Dynamic Badge Decoration matching Angel's palette */
+        .badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #e2bbf0, #f3d6fa, #c499d3);
+            color: #071e43 !important; /* Deep Blue text on light pink background */
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: bold;
+            margin-top: 15px;
+            text-transform: uppercase;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+            text-decoration: none;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .badge:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 15px rgba(226, 187, 240, 0.4);
+        }
+
+        /* Custom alignment rules for the live weather frame card */
+        .weather-card {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+        }
+
+        .weather-widget-container {
+            width: 100%;
+            margin-top: 15px;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+    </style>
 </head>
 <body>
 
-    <!-- Header Section (Stitch & Angel Theme) -->
-    <header class="stitch-header">
-        <h1>Welcome To My Portfolio</h1>
-        <p class="subtitle">By MaryAnn Duman</p>
-    </header>
+    <div class="container">
+        <header>
+            <p class="intro-text">Welcome To My Portfolio</p>
+            <h1>Aloha!</h1>
+            <p class="intro-text">By MaryAnn Duman</p>
+            <!-- New Neon Wave Element -->
+            <div class="island-wave"></div>
+        </header>
 
-    <!-- Main Content Container -->
-    <main class="container">
-        
-        <!-- About Section -->
-        <section class="portfolio-card">
-            <h2>Aloha! About Me 🌺</h2>
-            <p>Welcome to my space. "Ohana means family, and family means nobody gets left behind or forgotten." Here you will find my latest creations, projects, and designs inspired by things I love.</p>
-        </section>
-
-        <!-- Weather Widget Section -->
-        <aside class="weather-card">
-            <h2>Live Weather ⚡</h2>
-            <p> class="location">New Castle, DE 19720</p>
-            <div id="weather-card" class="weather-display">
-                <p>Loading local weather...</p>
+        <div class="cards-grid">
+            <!-- About Me Card -->
+            <div class="card">
+                <h3>About Me 🌺</h3>
+                <p>Welcome to my space. <strong>"Ohana means family, and family means nobody gets left behind or forgotten."</strong> Here you will find my latest creations, projects, and designs inspired by things I love.</p>
             </div>
-        </aside>
 
-    </main>
+            <!-- Family Card -->
+            <div class="card">
+                <h3>👩‍👧‍👦 My Ohana</h3>
+                <p>I am a mom to my own 6 kids: 4 girls (ages 14, 11, 8, and 5) and 2 boys (ages 6 and 2).</p>
+                <p>I am also a fiancée and a stepmom to his 4 sons!</p>
+            </div>
 
-    <!-- Targets your script file inside your repository JavaScript folder -->
-    <script src="JavaScript/java.js"></script>
+            <!-- Gaming & Hobbies Card -->
+            <div class="card">
+                <h3>🎮 Gaming & Hobbies</h3>
+                <p>In my spare time, I love playing Fortnite on my PS5!</p>
+                <!-- Linked directly to a search path for your gaming profile layout -->
+                <a href="https://fortnitetracker.com" target="_blank" rel="noopener noreferrer" class="badge">View Fortnite Stats</a>
+            </div>
+
+            <!-- Career Goals Card -->
+            <div class="card">
+                <h3>💻 Galactic Career Goals</h3>
+                <p>My dream job is <strong>Network Systems Administration & Engineering</strong>.</p>
+            </div>
+
+            <!-- Live Weather Card -->
+            <div class="card weather-card">
+                <h3>Live Weather ⚡</h3>
+                <p>New Castle, DE 19720</p>
+                <div class="weather-widget-container">
+                    <!-- Live Weather Widget Embedding with matching cosmic colors -->
+                    <a class="weatherwidget-io" href="https://forecast7.com" data-label_1="NEW CASTLE" data-label_2="WEATHER" data-font="Helvetica" data-icons="Climacons Animated" data-mode="Current" data-theme="pure" data-basecolor="rgba(13, 32, 64, 0)" data-accent="rgba(226, 187, 240, 1)" data-textcolor="#a3c6d9">Loading local weather...</a>
+                    <script>
+                    !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io';}}(document,'script','weatherwidget-io-js');
+                    </script>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </body>
 </html>
