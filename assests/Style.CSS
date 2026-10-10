@@ -1,4 +1,6 @@
-/* Base Reset & Global Styles */
+/* ==========================================================================
+   Core Layout & Cosmic Color Variables
+   ========================================================================== */
 * {
     margin: 0;
     padding: 0;
@@ -7,110 +9,153 @@
 }
 
 body {
-    background-color: #071e43; /* Stitch Deep Space Blue Background */
-    color: #e2bbf0; /* Angel Soft Lavender Pink Base Text */
+    background-color: #071e43 !important; /* Stitch Deep Space Blue Background */
+    color: #a3c6d9 !important;            /* Blue Mist color for high text readability */
+    margin: 0;
+    padding: 40px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     min-height: 100vh;
 }
 
-/* Header Component */
-.stitch-header {
-    background: linear-gradient(135deg, #10316b, #071e43); 
-    text-align: center;
-    padding: 3rem 1rem;
-    border-bottom: 5px solid #e2bbf0; /* Angel Pink Accent Border */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
-}
-
-.stitch-header h1 {
-    font-size: 2.8rem;
-    color: #e2bbf0; 
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5), 0 0 10px rgba(226, 187, 240, 0.3); /* Neon Angel Glow */
-    margin-bottom: 0.5rem;
-    font-weight: 700;
-}
-
-.subtitle {
-    font-size: 1.3rem;
-    color: #e2bbf0; 
-    font-weight: 600;
-}
-
-/* Page Layout Grid */
 .container {
-    max-width: 1100px;
-    margin: 2.5rem auto;
-    padding: 0 1.5rem;
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 2rem;
+    max-width: 1000px;
+    width: 100%;
 }
 
-@media (max-width: 768px) {
-    .container {
-        grid-template-columns: 1fr;
-    }
-}
-
-/* Theme Cards: Deep Space Dark Backgrounds */
-.portfolio-card, .weather-card {
-    background-color: #0d2040; /* Solid Deep Stitch Blue Card Background */
-    padding: 2rem;
-    border-radius: 16px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
-    border: 3px solid #e2bbf0; /* Angel Pink Outer Border */
-}
-
-/* Section Headings Styled As Clean Angel-Pink Badges */
-h2 {
-    color: #071e43; /* Deep Blue Text for maximum contrast against light pink */
-    font-size: 1.7rem;
-    margin-bottom: 1.2rem;
-    background-color: #e2bbf0; /* Solid Angel Pink Badge Background */
-    padding: 0.5rem 1rem;
-    border-radius: 8px;
-    display: inline-block;
-    font-weight: 600;
-}
-
-/* Standard Paragraph Text Rules */
-p {
-    line-height: 1.6;
-    font-size: 1.1rem;
-    color: #a3c6d9; /* Blue Mist text pops elegantly against dark cards */
-    margin-bottom: 1rem;
-}
-
-/* Specific Weather Element Overrides */
-.location {
-    font-weight: bold;
-    margin-bottom: 1rem;
-    color: #e2bbf0; /* Angel Pink for the City Name */
-}
-
-.weather-display {
+/* ==========================================================================
+   Header & Custom Neon Island Wave
+   ========================================================================== */
+header {
     text-align: center;
-    background-color: #10316b; /* Lighter Deep Space Blue for visual depth */
-    padding: 2rem 1.5rem;
-    border-radius: 12px;
-    border: 2px dashed #e2bbf0; /* Intermittent Angel Pink Frame */
+    margin-bottom: 40px;
+    position: relative;
 }
 
-/* JavaScript Target Elements Styling */
-.weather-temp {
+/* Angel Soft Lavender Pink Shimmer for Main Headings */
+h1, h2, h3 {
+    background: linear-gradient(135deg, #e2bbf0 0%, #f3d6fa 50%, #c499d3 100%) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.6));
+    margin-bottom: 15px;
+    font-weight: 800;
+}
+
+h1 {
     font-size: 3.2rem;
+    text-shadow: 0 0 12px rgba(226, 187, 240, 0.4);
+    margin-bottom: 5px;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-top: 30px;
+    text-align: center;
+}
+
+/* Blue Mist & Angel Pink Subtitles */
+.intro-text {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin: 5px 0;
+    background: linear-gradient(90deg, #a3c6d9, #e2bbf0, #a3c6d9);
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+}
+
+/* Custom Neon Island Wave Decoration */
+.island-wave {
+    width: 120px;
+    height: 6px;
+    background: linear-gradient(90deg, transparent, #e2bbf0, #a3c6d9, #e2bbf0, transparent);
+    margin: 15px auto 25px auto;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(226, 187, 240, 0.6);
+}
+
+/* ==========================================================================
+   Responsive Grid & Translucent Glass Cards
+   ========================================================================== */
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    padding: 10px;
+    margin-top: 20px;
+}
+
+.card {
+    background: rgba(13, 32, 64, 0.75); /* Translucent Stitch Blue glass tint */
+    backdrop-filter: blur(12px); 
+    -webkit-backdrop-filter: blur(12px);
+    border: 2px solid rgba(226, 187, 240, 0.4); /* Angel Pink borders */
+    border-radius: 16px;
+    padding: 25px;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Card Hover Glow Action */
+.card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(226, 187, 240, 0.9); /* Border glows Angel Pink on mouse hover */
+    box-shadow: 0 12px 40px 0 rgba(226, 187, 240, 0.2);
+}
+
+.card h3 {
+    margin-top: 0;
+    font-size: 1.5rem;
+    border-bottom: 1px solid rgba(226, 187, 240, 0.3);
+    padding-bottom: 10px;
+}
+
+p, li {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    opacity: 0.95;
+}
+
+strong {
+    color: #e2bbf0; /* Important text highlights in Angel Pink */
+}
+
+/* ==========================================================================
+   Gaming Interactive Badge Button
+   ========================================================================== */
+.badge {
+    display: inline-block;
+    background: linear-gradient(135deg, #e2bbf0, #f3d6fa, #c499d3);
+    color: #071e43 !important; /* Deep Blue text on light pink background */
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.85rem;
     font-weight: bold;
-    color: #e2bbf0; /* Angel Lavender Pink Temperature Numbers */
-    text-shadow: 0 0 8px rgba(226, 187, 240, 0.4);
+    margin-top: 15px;
+    text-transform: uppercase;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    text-decoration: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.weather-desc {
-    text-transform: capitalize;
-    font-weight: 600;
-    color: #a3c6d9; /* Blue Mist description text */
-    margin: 0.5rem 0;
+.badge:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(226, 187, 240, 0.4);
 }
 
-.weather-details {
-    font-size: 0.95rem;
-    color: #e2bbf0; /* Angel Pink details label */
+/* ==========================================================================
+   Live Weather Formatting
+   ========================================================================== */
+.weather-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.weather-widget-container {
+    width: 100%;
+    margin-top: 15px;
+    border-radius: 8px;
+    overflow: hidden;
 }
