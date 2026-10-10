@@ -148,6 +148,29 @@
             border-radius: 8px;
             overflow: hidden;
         }
+
+        /* Cosmic Glass Footer Styling */
+        footer {
+            margin-top: 50px;
+            padding: 20px;
+            text-align: center;
+            background: rgba(13, 32, 64, 0.5); /* Matching translucent tint */
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border-top: 1px solid rgba(226, 187, 240, 0.3); /* Angel Pink top accent border */
+            border-radius: 12px;
+        }
+
+        footer p {
+            margin: 5px 0;
+            font-size: 1rem;
+            letter-spacing: 0.5px;
+            transition: text-shadow 0.3s ease;
+        }
+
+        footer p:hover {
+            text-shadow: 0 0 8px rgba(226, 187, 240, 0.6); /* Soft Angel Pink glow on text hover */
+        }
     </style>
 </head>
 <body>
@@ -202,6 +225,11 @@
                 </div>
             </div>
         </div>
+
+        <!-- Custom Galactic Hub Footer -->
+        <footer>
+            <p>© 2026 MaryAnn Duman. Built with <strong>Ohana</strong> 🌺</p>
+        </footer>
     </div>
 
 </body>
