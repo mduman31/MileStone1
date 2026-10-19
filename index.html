@@ -29,6 +29,28 @@
             position: relative;
         }
 
+        /* Thematic Navigation Menu Rules */
+        nav {
+            margin: 20px 0;
+            padding: 10px;
+            background: rgba(13, 32, 64, 0.5);
+            border-radius: 30px;
+            display: inline-block;
+            border: 1px solid rgba(226, 187, 240, 0.3);
+        }
+
+        nav a {
+            color: #a3c6d9;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 5px 15px;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #e2bbf0; /* Text glows Angel Pink on hover */
+        }
+
         /* Angel Soft Lavender Pink Shimmer for main headers */
         h1, h2, h3 {
             background: linear-gradient(135deg, #e2bbf0 0%, #f3d6fa 50%, #c499d3 100%) !important;
@@ -180,6 +202,14 @@
             <p class="intro-text">Welcome To My Portfolio</p>
             <h1>Aloha!</h1>
             <p class="intro-text">By MaryAnn Duman</p>
+            
+            <!-- Global Relative Navigation Menu -->
+            <nav>
+                <a href="index.html">Home</a> | 
+                <a href="projects.html">Projects</a> | 
+                <a href="about.html">About & Contact</a>
+            </nav>
+
             <!-- New Neon Wave Element -->
             <div class="island-wave"></div>
         </header>
@@ -202,7 +232,6 @@
             <div class="card">
                 <h3>🎮 Gaming & Hobbies</h3>
                 <p>In my spare time, I love playing Fortnite on my PS5!</p>
-                <!-- Linked directly to a search path for your gaming profile layout -->
                 <a href="https://fortnitetracker.com" target="_blank" rel="noopener noreferrer" class="badge">View Fortnite Stats</a>
             </div>
 
@@ -218,17 +247,16 @@
                 <p>New Castle, DE 19720</p>
                 <div class="weather-widget-container">
                     <!-- Live Weather Widget Embedding with matching cosmic colors -->
-                    <a class="weatherwidget-io" href="https://forecast7.com" data-label_1="NEW CASTLE" data-label_2="WEATHER" data-font="Helvetica" data-icons="Climacons Animated" data-mode="Current" data-theme="pure" data-basecolor="rgba(13, 32, 64, 0)" data-accent="rgba(226, 187, 240, 1)" data-textcolor="#a3c6d9">Loading local weather...</a>
+                    <a class="weatherwidget-io" href="https://forecast7.com" data-label_1="NEW CASTLE" data-label_2="WEATHER" data-font="Helvetica" data-icons="Climacons Animated" data-mode="Current" data-theme="pure" data-basecolor="rgba(13, 32, 64, 0)" data-accent="rgba(226, 187, 240, 1)">NEW CASTLE WEATHER</a>
                     <script>
-                    !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io';}}(document,'script','weatherwidget-io-js');
+                    !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io;}}(document,'script','weatherwidget-io-js');
                     </script>
                 </div>
             </div>
         </div>
 
-        <!-- Custom Galactic Hub Footer -->
         <footer>
-            <p>© 2026 MaryAnn Duman. Built with <strong>Ohana</strong> 🌺</p>
+            <p>&copy; 2026 MaryAnn Duman</p>
         </footer>
     </div>
 
