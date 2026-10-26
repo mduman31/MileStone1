@@ -11,13 +11,17 @@
   --tropical-white: #f7f9fc;
   --text-dark: #2c3e50;
   
-  /* Required Spacing Variables System (Multiples of 8px) */
-  --space-8: 8px;
-  --space-16: 16px;
-  --space-24: 24px;
-  --space-32: 32px;
-  --space-64: 64px;
-}
+  /* Harmonized Background System to Prevent Clashes */
+  --theme-bg-tint: #f5f8fc;       /* Soft pale blue canvas */
+  --card-bg-clean: #ffffff;       /* Pure white cards for maximum contrast and zero color clashing */
+  
+  /* Required Spacing Variables System (Multiples of 8px Box Numbers) */
+  --space-8: 8px;                 /* Multiplier: 8px x 1 */
+  --space-16: 16px;               /* Multiplier: 8px x 2 */
+  --space-24: 24px;               /* Multiplier: 8px x 3 */
+  --space-32: 32px;               /* Multiplier: 8px x 4 */
+  --space-64: 64px;               /* Multiplier: 8px x 8 */
+}       
 
 /* Global Reset Optimization */
 * {
@@ -28,41 +32,59 @@
 
 body {
   font-family: 'Quicksand', sans-serif;
-  background-color: var(--tropical-white);
-  color: var(--text-dark);
+  background-color: var(--theme-bg-tint); /* Uniform base background */
+  color: var(--stitch-blue-mid);           /* Main words use standard Stitch Blue */
   line-height: 1.6;
 }
 
 /* TYPE SELECTORS */
 h1, h2, h3 {
   font-family: 'Fredoka', cursive;
-  color: var(--stitch-blue-dark);
-  margin-bottom: var(--space-16);
+  margin-bottom: var(--space-16); /* Built-in spacing tracking 16px multiples */
 }
 
-h1 { font-size: 2.3rem; }
-h2 { font-size: 1.8rem; border-bottom: 3px solid var(--angel-pink-soft); padding-bottom: var(--space-8); }
-p { margin-bottom: var(--space-16); }
+h1 { 
+  font-size: 2.3rem; 
+  color: var(--stitch-blue-dark); /* Dark blue for primary text block headers */
+}
+
+h2 { 
+  font-size: 1.8rem; 
+  color: var(--stitch-blue-dark); 
+  border-bottom: 3px solid var(--angel-pink-soft); /* Clean pink dividing underline */
+  padding-bottom: var(--space-8); /* Built-in inner spacing tracking 8px multiples */
+}
+
+h3 {
+  font-size: 1.4rem;
+  color: var(--stitch-blue-mid); /* Cards use structured mid-tones */
+}
+
+p { 
+  margin-bottom: var(--space-16); /* Paragraph break spacing matching 16px multiples */
+  color: var(--text-dark); /* Near-black body paragraphs to prevent low-contrast text clashing */
+}
 
 a {
-  color: var(--stitch-blue-mid);
+  color: var(--stitch-blue-light); /* Bright call-to-actions */
   text-decoration: none;
   font-weight: 700;
   transition: color 0.3s ease;
 }
 
 a:hover {
-  color: var(--angel-pink-dark);
+  color: var(--angel-pink-dark); /* Clean hover transition */
 }
 
 /* CLASS SELECTORS */
 .navbar {
   background-color: var(--stitch-blue-dark);
-  padding: var(--space-16);
+  padding: var(--space-16); /* Header bar cushion using 16px spacing */
   display: flex;
-  flex-direction: column; /* Optimized vertical layout for 320px screens */
+  flex-direction: column; /* Stacked layout on narrow 320px screens */
   align-items: center;
-  gap: var(--space-16);
+  gap: var(--space-16); /* Element list breaks tracking 16px spacing */
+  border-bottom: 4px solid var(--angel-pink-soft); /* Pink trim creates solid separation */
 }
 
 .logo {
@@ -74,12 +96,12 @@ a:hover {
 .nav-links {
   list-style: none;
   display: flex;
-  gap: var(--space-16);
+  gap: var(--space-16); /* Navigation gaps tracking 16px alignment rules */
 }
 
 .nav-links a {
   color: white;
-  padding: var(--space-8) var(--space-16);
+  padding: var(--space-8) var(--space-16); /* Layout button items built on 8px and 16px elements */
   border-radius: var(--space-8);
   font-size: 0.95rem;
 }
@@ -93,22 +115,34 @@ a:hover {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  padding: var(--space-24) var(--space-16);
+  padding: var(--space-24) var(--space-16); /* Master gutters bound to 24px and 16px elements */
 }
 
 .hero-section {
   background: linear-gradient(185deg, var(--stitch-blue-dark), var(--stitch-blue-mid));
   color: white;
   text-align: center;
-  padding: var(--space-64) var(--space-16);
+  padding: var(--space-64) var(--space-16); /* Extreme vertical padding space built on 64px elements */
+  border-bottom: 4px solid var(--angel-pink-soft);
 }
 
-.hero-section h1 { color: white; }
-.hero-section p { color: var(--angel-pink-soft); max-width: 600px; margin: 0 auto; }
+.hero-section h1 { 
+  color: var(--angel-pink-soft); /* Swapped cleanly to bright Angel Pink */
+}
+
+.hero-section p { 
+  color: #e2e8f0; /* Crisp off-white to pass textbook readability scores over dark backgrounds */
+  max-width: 600px; 
+  margin: 0 auto; 
+}
 
 .page-header {
   text-align: center;
-  margin-bottom: var(--space-32);
+  margin-bottom: var(--space-32); /* Generous header breaks built on 32px spacing variables */
+}
+
+.page-header h1 {
+  color: var(--stitch-blue-dark);
 }
 
 /* ==========================================
@@ -116,23 +150,24 @@ a:hover {
    ========================================== */
 .portfolio-grid {
   display: grid;
-  grid-template-columns: 1fr; /* Default single column for mobile views */
-  gap: var(--space-24);
+  grid-template-columns: 1fr; /* Baseline single column grid item layout */
+  gap: var(--space-24); /* Multi-column separation track padding using 24px spaces */
   margin-top: var(--space-24);
 }
 
 .card {
-  background: white;
+  background: var(--card-bg-clean); /* Separated white card canvas stops text layer clashes */
   border-radius: var(--space-16);
-  padding: var(--space-24);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
-  border-left: 5px solid var(--stitch-blue-light);
+  padding: var(--space-24); /* Internal content box cushions bound cleanly to 24px spacing tokens */
+  box-shadow: 0 4px 12px rgba(14, 36, 64, 0.05); /* Faded shadow to blend onto theme backdrop */
+  border-left: 5px solid var(--stitch-blue-light); /* Accent border line marker */
   border-bottom: 2px solid transparent;
-  transition: transform 0.2s ease;
+  transition: transform 0.2s ease, border-color 0.2s ease;
 }
 
 .card:hover {
-  border-bottom-color: var(--angel-pink-dark);
+  transform: translateY(-2px);
+  border-bottom-color: var(--angel-pink-dark); /* Card bases light up pink on interaction loop */
 }
 
 /* ID SELECTOR */
@@ -140,9 +175,9 @@ a:hover {
   background: linear-gradient(135deg, var(--stitch-blue-mid), var(--stitch-blue-dark));
   color: white;
   border-radius: var(--space-16);
-  padding: var(--space-24);
-  margin-top: var(--space-32);
-  border: 2px solid var(--angel-pink-soft);
+  padding: var(--space-24); /* Weather block padding built on 24px spaces */
+  margin-top: var(--space-32); /* Top divider tracking 32px layout adjustments */
+  border: 3px solid var(--angel-pink-soft); /* Isolated weather container */
 }
 
 #weather-widget h3 {
@@ -151,17 +186,19 @@ a:hover {
 
 #weather-display {
   background: rgba(255, 255, 255, 0.1);
-  padding: var(--space-16);
+  padding: var(--space-16); /* Text reading window padding tracking 16px variables */
   border-radius: var(--space-8);
   font-family: monospace;
+  border: 1px solid rgba(251, 198, 208, 0.2);
 }
 
 footer {
   text-align: center;
-  padding: var(--space-32);
+  padding: var(--space-32); /* Footer dimension footprint cushion built on 32px spacing */
   background-color: var(--stitch-blue-dark);
-  color: white;
-  margin-top: var(--space-64);
+  color: var(--angel-pink-soft); /* High-visibility footer labels */
+  margin-top: var(--space-64); /* Section distance break matching 64px layout blocks */
+  border-top: 4px solid var(--angel-pink-soft);
 }
 
 /* ==========================================
@@ -173,15 +210,15 @@ footer {
   .navbar {
     flex-direction: row;
     justify-content: space-between;
-    padding: var(--space-16) var(--space-32);
+    padding: var(--space-16) var(--space-32); /* Desktop navbar expansion utilizing 16px and 32px padding tokens */
   }
 
   .nav-links {
-    gap: var(--space-24);
+    gap: var(--space-24); /* Expanded navbar navigation gap utilizing 24px spacing tokens */
   }
 
   .portfolio-grid {
-    grid-template-columns: repeat(2, 1fr); /* Responsive split-column system */
+    grid-template-columns: repeat(2, 1fr); /* Clean multi-column split layout */
   }
 
   h1 { font-size: 2.8rem; }
@@ -190,10 +227,10 @@ footer {
 /* Media Query 2: Large Desktop Layout (Triggers at 1200px up) */
 @media (min-width: 1200px) {
   .portfolio-grid {
-    grid-template-columns: repeat(3, 1fr); /* Responsive triple-column system */
+    grid-template-columns: repeat(3, 1fr); /* Spreads out to full 3 wide column row grid */
   }
 
   .container {
-    padding: var(--space-64) 0;
+    padding: var(--space-64) 0; /* Expanded master content padding space utilizing 64px elements */
   }
 }
