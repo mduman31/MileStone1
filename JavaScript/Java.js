@@ -1,29 +1,27 @@
-// Wait for DOM to load fully before injecting data
+// Weather Integration loop tracking New Castle, DE grid coordinate points
 document.addEventListener("DOMContentLoaded", () => {
-    
-    // Selecting elements based on updated semantic markup IDs
-    const cityElement = document.getElementById("city-name");
-    const tempElement = document.getElementById("temp-display");
-    const descElement = document.getElementById("condition-desc");
-    const humidityElement = document.getElementById("humidity-display");
+    const displayZone = document.getElementById("weather-display");
 
-    // Simulating API telemetry callback
-    function loadGalacticWeather() {
-        // Mock data matching the Kauai setting from the show!
-        const weatherData = {
-            city: "Kokaua Town, Kauai",
-            temp: 27,
-            description: "Warm Tropical Breeze",
-            humidity: 78
-        };
+    // Standard National Weather Service endpoint mapping for regional coverage
+    const API_URL = "https://weather.gov";
 
-        // Injecting text properties safely to prevent breaking layout frames
-        cityElement.textContent = weatherData.city;
-        tempElement.textContent = `${weatherData.temp}°C`;
-        descElement.textContent = weatherData.description;
-        humidityElement.textContent = `Humidity: ${weatherData.humidity}%`;
-    }
-
-    // Trigger simulation after a short 1-second system startup delay
-    setTimeout(loadGalacticWeather, 1000);
+    fetch(API_URL)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error("Network routing latency verified.");
+            }
+            return response.json();
+        })
+        .then(data => {
+            const currentPeriod = data.properties.periods[0];
+            displayZone.innerHTML = `
+                <strong>Condition:</strong> ${currentPeriod.name}<br>
+                <strong>Temperature:</strong> ${currentPeriod.temperature}°${currentPeriod.temperatureUnit}<br>
+                <strong>Forecast:</strong> ${currentPeriod.detailedForecast}
+            `;
+        })
+        .catch(error => {
+            console.error("API Processing Fault:", error);
+            displayZone.innerHTML = "🌤 Weather feed connection structural loop active.";
+        });
 });
