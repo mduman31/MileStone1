@@ -3,31 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home - Personal Portfolio</title>
-    <link rel="stylesheet" href="assests/Style.CSS">
+    <title>MaryAnn Duman | Home Portfolio</title>
+    <!-- Google Fonts Pairings: Fredoka for Headings, Quicksand for Body Text -->
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=Fredoka:wght@400;600&family=Quicksand:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- Linked CSS Stylesheet Deliverable -->
+    <link rel="stylesheet" href="styling.css">
 </head>
 <body>
-    <header>
-        <h1>MaryAnn Duman's Professional Portfolio</h1>
-        <nav>
-            <a href="index.html">Home</a> | 
-            <a href="Project.html">Projects/Work</a> | 
-            <a href="about.html">About/Contact</a>
-        </nav>
+
+    <!-- Semantic Navigation bar component with active states -->
+    <nav class="navbar">
+        <div class="logo">🌺 Ohana Portfolio</div>
+        <ul class="nav-links">
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="about.html">About Me</a></li>
+            <li><a href="Project.html">My Project</a></li>
+        </ul>
+    </nav>
+
+    <!-- Stylized Hero Section with thematic gradient rules -->
+    <header class="hero-section">
+        <h1>Welcome to My Space</h1>
+        <p>Hi, I'm MaryAnn Duman. Welcome to my personal multi-page web development showcase built with a custom Stitch Blue & Angel Pink aesthetic.</p>
     </header>
-    <main>
-        <section>
-            <h2>Welcome to my Portfolio</h2>
-            <p>I am studying Introduction to Information Technology with a career goal of working in Network Systems Administration & Engineering.</p>
+
+    <!-- Core Layout Box Container -->
+    <main class="container">
+        <h2>My Work & Dashboard</h2>
+        
+        <!-- Multi-column Layout Section using CSS Grid (Deliverable #2) -->
+        <section class="portfolio-grid">
+            <article class="card">
+                <h3>About Me Section</h3>
+                <p>Learn more about my background, career objectives, technical milestones, and what drives my programming passion.</p>
+                <a href="about.html">Read My Story &rarr;</a>
+            </article>
+
+            <article class="card">
+                <h3>Project Deliverables</h3>
+                <p>Explore the live tracking systems, responsive markup, text formatting strategies, and custom stylesheets used here.</p>
+                <a href="Project.html">View Projects &rarr;</a>
+            </article>
+
+            <article class="card">
+                <h3>GitHub Repositories</h3>
+                <p>Review the source files, clean directory structures, code commits, and project architecture layouts cleanly hosted on GitHub.</p>
+                <a href="https://github.com/mduman31/MileStone1" target="_blank">Explore Code &rarr;</a>
+            </article>
         </section>
-        <section>
-            <h3>Project Overview</h3>
-            <p>This space handles layout assignments, web development foundations, and live API tools like weather tracking dashboards.</p>
+
+        <!-- Real-Time API Module targeted via strict ID Selector (Deliverable #1) -->
+        <section id="weather-widget">
+            <h3>📍 New Castle, DE Live Tracking</h3>
+            <p>Fetching real-time updates directly from the National Weather Service API infrastructure.</p>
+            <div id="weather-display">Loading current regional meteorological conditions...</div>
         </section>
     </main>
+
     <footer>
-        <p>&copy; 2026 MaryAnn Duman. All Rights Reserved.</p>
+        <p>&copy; 2026 MaryAnn Duman. Created with 💙 | All Rights Reserved.</p>
     </footer>
-    <script src="JavaScript/Java.js"></script>
+
+    <!-- Weather Script Loader Execution -->
+    <script src="JavaScript/java.js"></script>
 </body>
 </html>
