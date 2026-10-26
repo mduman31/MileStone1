@@ -3,35 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projects - Personal Portfolio</title>
-    <link rel="stylesheet" href="assests/Style.CSS">
+    <title>MaryAnn Duman | Projects</title>
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=Fredoka:wght@400;600&family=Quicksand:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styling.css">
 </head>
 <body>
-    <header>
-        <h1>My Web Projects & Coursework</h1>
-        <nav>
-            <a href="index.html">Home</a> | 
-            <a href="Project.html">Projects/Work</a> | 
-            <a href="about.html">About/Contact</a>
-        </nav>
-    </header>
-    <main>
-        <section>
-            <h2>Academic Assignments</h2>
-            <p>Below is a collection of milestones and lab projects built during my Information Technology courses.</p>
-        </section>
-        <section>
-            <h3>Milestone 1: Portfolio Foundation</h3>
-            <p>Features structural HTML skeleton components, semantic containers, and site-wide relative navigation links.</p>
-        </section>
-        <section>
-            <h3>Homework 2: Page Styling</h3>
-            <p>Demonstrates structural box model configurations, custom layout borders, and tailored color palette foundations.</p>
+
+    <nav class="navbar">
+        <div class="logo">🌺 Ohana Portfolio</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Me</a></li>
+            <li><a href="Project.html" class="active">My Project</a></li>
+        </ul>
+    </nav>
+
+    <main class="container">
+        <header class="page-header">
+            <h1>Project Milestones</h1>
+            <p>An ongoing timeline tracking my web configuration work models.</p>
+        </header>
+
+        <section class="portfolio-grid">
+            <div class="card">
+                <h2>Milestone 1</h2>
+                <p>Developed core HTML skeleton frameworks, organized baseline directory structures, and validated functional API connection loops for raw information feeds.</p>
+            </div>
+            <div class="card">
+                <h2>Milestone 2</h2>
+                <p>Applied extensive stylesheet layouts, linked programmatic color configurations, and established robust media criteria to guarantee responsive clarity down to 320px screens.</p>
+            </div>
         </section>
     </main>
+
     <footer>
-        <p>&copy; 2026 MaryAnn Duman. All Rights Reserved.</p>
+        <p>&copy; 2026 MaryAnn Duman. Created with 💙 | All Rights Reserved.</p>
     </footer>
-    <script src="JavaScript/Java.js"></script>
 </body>
 </html>
