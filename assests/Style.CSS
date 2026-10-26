@@ -1,161 +1,199 @@
 /* ==========================================================================
-   Core Layout & Cosmic Color Variables
+   1. STYLING: Design System, Spacing System (Multiples of 8px), Color Palette
    ========================================================================== */
+:root {
+  /* Theme: Deep space blues, tropical skies, and custom soft pink accents */
+  --stitch-blue-dark: #0e2440;
+  --stitch-blue-mid: #1b4973;
+  --stitch-blue-light: #4a90e2;
+  --angel-pink-soft: #fbc6d0;
+  --angel-pink-dark: #f07890;
+  --tropical-white: #f7f9fc;
+  --text-dark: #2c3e50;
+  
+  /* Required Spacing Variables System (Multiples of 8px) */
+  --space-8: 8px;
+  --space-16: 16px;
+  --space-24: 24px;
+  --space-32: 32px;
+  --space-64: 64px;
+}
+
+/* Global Reset Optimization */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-    background-color: #071e43 !important; /* Stitch Deep Space Blue Background */
-    color: #a3c6d9 !important;            /* Blue Mist color for high text readability */
-    margin: 0;
-    padding: 40px 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
+  font-family: 'Quicksand', sans-serif;
+  background-color: var(--tropical-white);
+  color: var(--text-dark);
+  line-height: 1.6;
+}
+
+/* TYPE SELECTORS */
+h1, h2, h3 {
+  font-family: 'Fredoka', cursive;
+  color: var(--stitch-blue-dark);
+  margin-bottom: var(--space-16);
+}
+
+h1 { font-size: 2.3rem; }
+h2 { font-size: 1.8rem; border-bottom: 3px solid var(--angel-pink-soft); padding-bottom: var(--space-8); }
+p { margin-bottom: var(--space-16); }
+
+a {
+  color: var(--stitch-blue-mid);
+  text-decoration: none;
+  font-weight: 700;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--angel-pink-dark);
+}
+
+/* CLASS SELECTORS */
+.navbar {
+  background-color: var(--stitch-blue-dark);
+  padding: var(--space-16);
+  display: flex;
+  flex-direction: column; /* Optimized vertical layout for 320px screens */
+  align-items: center;
+  gap: var(--space-16);
+}
+
+.logo {
+  color: var(--angel-pink-soft);
+  font-family: 'Fredoka', cursive;
+  font-size: 1.5rem;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: var(--space-16);
+}
+
+.nav-links a {
+  color: white;
+  padding: var(--space-8) var(--space-16);
+  border-radius: var(--space-8);
+  font-size: 0.95rem;
+}
+
+.nav-links a.active, .nav-links a:hover {
+  background-color: var(--stitch-blue-mid);
+  color: var(--angel-pink-soft);
 }
 
 .container {
-    max-width: 1000px;
-    width: 100%;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--space-24) var(--space-16);
 }
 
-/* ==========================================================================
-   Header & Custom Neon Island Wave
-   ========================================================================== */
-header {
-    text-align: center;
-    margin-bottom: 40px;
-    position: relative;
+.hero-section {
+  background: linear-gradient(185deg, var(--stitch-blue-dark), var(--stitch-blue-mid));
+  color: white;
+  text-align: center;
+  padding: var(--space-64) var(--space-16);
 }
 
-/* Angel Soft Lavender Pink Shimmer for Main Headings */
-h1, h2, h3 {
-    background: linear-gradient(135deg, #e2bbf0 0%, #f3d6fa 50%, #c499d3 100%) !important;
-    -webkit-background-clip: text !important;
-    -webkit-text-fill-color: transparent !important;
-    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.6));
-    margin-bottom: 15px;
-    font-weight: 800;
+.hero-section h1 { color: white; }
+.hero-section p { color: var(--angel-pink-soft); max-width: 600px; margin: 0 auto; }
+
+.page-header {
+  text-align: center;
+  margin-bottom: var(--space-32);
 }
 
-h1 {
-    font-size: 3.2rem;
-    text-shadow: 0 0 12px rgba(226, 187, 240, 0.4);
-    margin-bottom: 5px;
-}
-
-h2 {
-    font-size: 2rem;
-    margin-top: 30px;
-    text-align: center;
-}
-
-/* Blue Mist & Angel Pink Subtitles */
-.intro-text {
-    font-size: 1.4rem;
-    font-weight: 700;
-    margin: 5px 0;
-    background: linear-gradient(90deg, #a3c6d9, #e2bbf0, #a3c6d9);
-    -webkit-background-clip: text !important;
-    -webkit-text-fill-color: transparent !important;
-}
-
-/* Custom Neon Island Wave Decoration */
-.island-wave {
-    width: 120px;
-    height: 6px;
-    background: linear-gradient(90deg, transparent, #e2bbf0, #a3c6d9, #e2bbf0, transparent);
-    margin: 15px auto 25px auto;
-    border-radius: 50%;
-    box-shadow: 0 0 10px rgba(226, 187, 240, 0.6);
-}
-
-/* ==========================================================================
-   Responsive Grid & Translucent Glass Cards
-   ========================================================================== */
-.cards-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 25px;
-    padding: 10px;
-    margin-top: 20px;
+/* ==========================================
+   2. LAYOUT: CSS Grid Layout Implementation
+   ========================================== */
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: 1fr; /* Default single column for mobile views */
+  gap: var(--space-24);
+  margin-top: var(--space-24);
 }
 
 .card {
-    background: rgba(13, 32, 64, 0.75); /* Translucent Stitch Blue glass tint */
-    backdrop-filter: blur(12px); 
-    -webkit-backdrop-filter: blur(12px);
-    border: 2px solid rgba(226, 187, 240, 0.4); /* Angel Pink borders */
-    border-radius: 16px;
-    padding: 25px;
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
-    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  background: white;
+  border-radius: var(--space-16);
+  padding: var(--space-24);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+  border-left: 5px solid var(--stitch-blue-light);
+  border-bottom: 2px solid transparent;
+  transition: transform 0.2s ease;
 }
 
-/* Card Hover Glow Action */
 .card:hover {
-    transform: translateY(-5px);
-    border-color: rgba(226, 187, 240, 0.9); /* Border glows Angel Pink on mouse hover */
-    box-shadow: 0 12px 40px 0 rgba(226, 187, 240, 0.2);
+  border-bottom-color: var(--angel-pink-dark);
 }
 
-.card h3 {
-    margin-top: 0;
-    font-size: 1.5rem;
-    border-bottom: 1px solid rgba(226, 187, 240, 0.3);
-    padding-bottom: 10px;
+/* ID SELECTOR */
+#weather-widget {
+  background: linear-gradient(135deg, var(--stitch-blue-mid), var(--stitch-blue-dark));
+  color: white;
+  border-radius: var(--space-16);
+  padding: var(--space-24);
+  margin-top: var(--space-32);
+  border: 2px solid var(--angel-pink-soft);
 }
 
-p, li {
-    font-size: 1.1rem;
-    line-height: 1.6;
-    opacity: 0.95;
+#weather-widget h3 {
+  color: var(--angel-pink-soft);
 }
 
-strong {
-    color: #e2bbf0; /* Important text highlights in Angel Pink */
+#weather-display {
+  background: rgba(255, 255, 255, 0.1);
+  padding: var(--space-16);
+  border-radius: var(--space-8);
+  font-family: monospace;
 }
 
-/* ==========================================================================
-   Gaming Interactive Badge Button
-   ========================================================================== */
-.badge {
-    display: inline-block;
-    background: linear-gradient(135deg, #e2bbf0, #f3d6fa, #c499d3);
-    color: #071e43 !important; /* Deep Blue text on light pink background */
-    padding: 8px 16px;
-    border-radius: 20px;
-    font-size: 0.85rem;
-    font-weight: bold;
-    margin-top: 15px;
-    text-transform: uppercase;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
-    text-decoration: none;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+footer {
+  text-align: center;
+  padding: var(--space-32);
+  background-color: var(--stitch-blue-dark);
+  color: white;
+  margin-top: var(--space-64);
 }
 
-.badge:hover {
-    transform: scale(1.05);
-    box-shadow: 0 6px 15px rgba(226, 187, 240, 0.4);
+/* ==========================================
+   3. RESPONSIVENESS: Multi-Screen Media Queries
+   ========================================== */
+
+/* Media Query 1: Tablet Configuration (Triggers at 768px up) */
+@media (min-width: 768px) {
+  .navbar {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: var(--space-16) var(--space-32);
+  }
+
+  .nav-links {
+    gap: var(--space-24);
+  }
+
+  .portfolio-grid {
+    grid-template-columns: repeat(2, 1fr); /* Responsive split-column system */
+  }
+
+  h1 { font-size: 2.8rem; }
 }
 
-/* ==========================================================================
-   Live Weather Formatting
-   ========================================================================== */
-.weather-card {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-}
+/* Media Query 2: Large Desktop Layout (Triggers at 1200px up) */
+@media (min-width: 1200px) {
+  .portfolio-grid {
+    grid-template-columns: repeat(3, 1fr); /* Responsive triple-column system */
+  }
 
-.weather-widget-container {
-    width: 100%;
-    margin-top: 15px;
-    border-radius: 8px;
-    overflow: hidden;
+  .container {
+    padding: var(--space-64) 0;
+  }
 }
